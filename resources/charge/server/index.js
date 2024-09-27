@@ -1,5 +1,5 @@
 import * as alt from "alt-server";
-import { logMessage } from "./log";
+import { logMessage } from "./log.js";
 
 
 
