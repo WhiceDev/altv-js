@@ -10,4 +10,4 @@ website = '-'
 language = 'de'
 description = 'DEV Test Server'
 modules = ['js-module', 'js-bytecode-module']
-resources = ['chat', 'freeroam']
+resources = ['charge']
