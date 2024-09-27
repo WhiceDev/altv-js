@@ -2,3 +2,4 @@ server.log
 .server-crashes-cache/
 cache/
 .env
+node_modules/
