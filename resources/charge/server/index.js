@@ -19,6 +19,7 @@ const loadEvents = async (directory) => {
             const fileUrl = pathToFileURL(fullPath).href;
             try {
                 await import(fileUrl); // Dynamischer Import mit URL
+                logMessage(`${file} loaded`)
             } catch (err) {
                 console.error(`Fehler beim Laden von ${file}:`, err);
             }
