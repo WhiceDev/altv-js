@@ -4,5 +4,9 @@
     "@altv/types-natives": "^16.2.1",
     "@altv/types-server": "^16.2.5",
     "@altv/types-webview": "^16.2.1"
+  },
+  "dependencies": {
+    "axios": "^1.7.7",
+    "dotenv": "^16.4.5"
   }
 }
