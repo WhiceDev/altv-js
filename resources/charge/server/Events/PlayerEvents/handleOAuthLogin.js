@@ -28,7 +28,11 @@ alt.onClient('token', async (player, token) => {
         
     } else {
         await saveUserToDatabase(request.data.id, request.data.username, request.data.discriminator);
+        player.setPlayerData(request.data.id, request.data.username, request.data.discriminator);
     }
+
+    const playerData = player.getPlayerData();
+    playerData.logPlayerInfo();
 });
 
 async function findUserInDatabase(discordId) {

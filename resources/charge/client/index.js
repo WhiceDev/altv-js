@@ -1,7 +1,7 @@
 import * as alt from "alt-client";
 import * as native from 'natives';
+import { Events } from "../shared/events";
 
-var freezed = false;
 
 alt.on('consoleCommand', (command, ...args) => {
     alt.log(`Command: ${command} | Args: ${args} | Player: ${alt.Player.local.name}`);
@@ -12,13 +12,9 @@ alt.on('consoleCommand', (command, ...args) => {
             break;
         }
         case 'freeze': {
-            if(freezed) freezed = false;
-            else freezed = true;
-            native.freezeEntityPosition(alt.Player.local.scriptID, freezed);
             break;
         }
     }
-
 });
 
 alt.onServer('setDiscordAppId', (appId) => {
