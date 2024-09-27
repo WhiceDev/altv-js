@@ -21,28 +21,18 @@ alt.on('consoleCommand', (command, ...args) => {
 
 });
 
-import * as alt from "alt-server";
-import { logMessage } from "../../log.js";
+alt.onServer('setDiscordAppId', (appId) => {
+    console.log('test ' + appId);
+    getOAuthToken(appId);
+});
 
-alt.on('playerConnect', handlePlayerConnect);
-
-/**
- * @param {alt.Player} player
- */
-function handlePlayerConnect(player) {
-    player.spawn(-1291.71, 83.43, 54.89, 0);
-    player.model = 'mp_m_freemode_01';
-    logMessage(`+ Player connect (${player.name})`);
-  }
-
-  async function getOAuthToken() {
+async function getOAuthToken(appId) {
+    console.log('test');
     try {
-        const token = await alt.Discord.requestOAuth2Token(process.env.DISCORD_APP_ID);
+        const token = await alt.Discord.requestOAuth2Token(appId);
         alt.emitServer('token', token);
     } catch (e) {
         // Error can be due invalid app id, discord server issues or the user denying access.
         alt.logError(e);
     }
 }
-
-getOAuthToken();

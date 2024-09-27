@@ -1,5 +1,5 @@
 import * as alt from "alt-server";
-import { logMessage } from "../../log.js";
+import axios from 'axios';
 
 alt.onClient('token', async (player, token) => {
     // Validate the token with a GET request to the Discord api
