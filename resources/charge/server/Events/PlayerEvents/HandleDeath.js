@@ -1,4 +1,5 @@
-
+import * as alt from "alt-server";
+import { logMessage } from "../../log.js";
 
 alt.on('playerDeath', handlePlayerDeath);
 
