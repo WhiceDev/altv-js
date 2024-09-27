@@ -9,5 +9,6 @@ alt.on('playerConnect', handleConnect);
  */
 function handleConnect(player) {
   player.spawn(-1291.71, 83.43, 54.89, 0);
-  player.model = `mp_m_freemode_01`;
+  player.model = 'mp_m_freemode_01';
+  console.log(`+ Player connect (${player.name})`);
 }
